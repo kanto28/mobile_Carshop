@@ -5,20 +5,22 @@
 </ion-header>
 
 <ion-content>
-  <ion-card *ngFor="let objet of donnees">
+  <ion-card>
     <ion-item lines="none">
       <ion-img src="./assets/andrana.jpg" slot="start" name="hourglass-outline"></ion-img>
       <ion-label>
-        <p>Description : {{ objet.descriptions}}</p>
-        <p>Prix : {{ objet.prix }} MGA</p>
+        <p>Toyota , Corolla , Essence</p>
+        <p>Kilometrage : 45000 km</p>
+        <p>Transmission : Manuelle</p>
+        <p>Prix : 15 000 000 MGA</p>
       </ion-label>
     </ion-item>
     <ion-item lines="none">
       <ion-label>
-        <p>{{ objet.date_annonce }}</p>
+        <p>22/04/2021 16:04:00</p>
       </ion-label>
     </ion-item>
-    <ion-button (click)="direction(objet.id_annonce)" routerDirection="forward" color="success" fill="clear" size="full">Voir details...</ion-button>
+    <ion-button (click)="direction('1')" routerDirection="forward" color="success" fill="clear" size="full">Voir details...</ion-button>
   </ion-card>
   <ion-fab color="success" slot="fixed" vertical="bottom" horizontal="end">
     <ion-fab-button  side="center" contentId="main-content">
