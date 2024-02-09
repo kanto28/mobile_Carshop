@@ -1,0 +1,54 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button  [routerLink]="['/mini-annonce']">
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Ajouter Annonce</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-card>
+        <ion-list>
+          <ion-item>
+            <ion-select aria-label="Fruit" interface="action-sheet" placeholder="Selectionne ta Voiture" [(ngModel)]="info.nom_voiture">
+              <ion-select-option *ngFor="let voiture of voitures" value="{{ voiture.nom_voiture }}">{{ voiture.nom_voiture }}</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-list>
+        <ion-list>
+          <ion-item>
+            <ion-select aria-label="Fruit" interface="action-sheet" placeholder="Selectionne Empacement" [(ngModel)]="info.nom_emplacement">
+              <ion-select-option *ngFor="let emplacement of emplacements" value="{{ emplacement.nom_emplacement }}">{{ emplacement.nom_emplacement }}</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-list>
+        <ion-item>
+          <ion-input labelPlacement="floating"  type="number" [(ngModel)]="info.prix">
+            <div slot="label">Prix de la voiture</div>
+          </ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-button color="dark" fill="clear" size="full" (click)="ouvrirGalerie()">Importer les Photos</ion-button>
+        </ion-item>
+        <swiper-container #swiper (afterinit)="swiperReady()" (slidechange)="swiperSlideChanged($event)" [loop]="true" [pagination]="true" zoom="true">
+          
+          <swiper-slide *ngFor="let photo of allPhotos">
+            <div class="swiper-zoom-container">
+              <img [src]="photo">
+            </div>
+          </swiper-slide>
+        </swiper-container>
+        <ion-item>
+          <ion-textarea label="Description" labelPlacement="floating" fill="solid" type="text" placeholder="Enter Description" [(ngModel)]="info.description"></ion-textarea>
+        </ion-item>
+      <ion-button color="dark" fill="clear" size="full" (click)="onClick()">Valider</ion-button>
+  </ion-card>
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+    <ion-fab-button [routerLink]="['/ajouter-voiture']">
+      <ion-icon name="chevron-forward-circle"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

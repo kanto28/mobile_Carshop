@@ -1,0 +1,7 @@
+{
+  "name": "vente-voiture-app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

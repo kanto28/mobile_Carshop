@@ -1,0 +1,83 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button  [routerLink]="['/ajouter-annonce']">
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Ajouter Voiture</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-card>
+      <ion-item>
+        <ion-input labelPlacement="floating"  type="text" [(ngModel)]="info.nom_voiture">
+          <div slot="label">Nom de la voiture</div>
+        </ion-input>
+        <ion-input labelPlacement="floating"  type="number" [(ngModel)]="info.nombre_place">
+          <div slot="label">Nombre de place</div>
+        </ion-input>
+      </ion-item>
+      <ion-list>
+        <ion-item>
+          <ion-select aria-label="Fruit" interface="action-sheet" placeholder="Marque" [(ngModel)]="info.marque">
+            <ion-select-option *ngFor="let marque of marques" value="{{ marque.nom_marque}}">{{marque.nom_marque}}</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
+      <ion-list>
+        <ion-item>
+          <ion-select aria-label="Fruit" interface="action-sheet" placeholder="Carburant" [(ngModel)]="info.carburant" >
+            <ion-select-option *ngFor="let carburant of carburants" value="{{ carburant.nom_carburant }}">{{ carburant.nom_carburant }}</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
+      <ion-list>
+      <ion-item>
+        <ion-select aria-label="Fruit" interface="action-sheet" placeholder="Model" [(ngModel)]="info.model" >
+          <ion-select-option *ngFor="let model of models" value="{{ model.nom_model}}">{{model.nom_model}}</ion-select-option>
+        </ion-select>
+      </ion-item>
+      </ion-list>
+      <ion-list>
+        <ion-item>
+          <ion-select aria-label="Fruit" interface="action-sheet" placeholder="Année de fabrication" [(ngModel)]="info.annee">
+            <ion-select-option *ngFor=" let annee of annees" value="{{ annee }}">{{ annee }}</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
+      <ion-item>
+        <ion-input labelPlacement="floating"  type="number" [(ngModel)]="info.kilometrage">
+          <div slot="label">Kilometrage</div>
+        </ion-input>
+      </ion-item>
+      <ion-list>
+        <ion-item>
+          <ion-select aria-label="Fruit" interface="action-sheet" placeholder="Transmission" [(ngModel)]="info.transmission">
+            <ion-select-option value="automatique">Automatique</ion-select-option>
+            <ion-select-option value="manuelle">Manuelle</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
+      <ion-item>
+        <ion-input labelPlacement="floating"  type="number" [(ngModel)]="info.vitesse">
+          <div slot="label">Vitesse</div>
+        </ion-input>
+      </ion-item>
+      <ion-list>
+        <ion-item>
+          <ion-select aria-label="Fruit" interface="action-sheet" placeholder="Categorie" [(ngModel)]="info.nom_categorie">
+            <ion-select-option *ngFor="let categorie of categories" value="{{ categorie.nom_categorie }}">{{ categorie.nom_categorie }}</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
+      <div slot="label">Les Options : </div>
+      <ion-list>
+        <ion-item *ngFor="let option of options">
+          <ion-label>{{ option.label }}</ion-label>
+          <ion-checkbox [(ngModel)]="option.checked"></ion-checkbox>
+        </ion-item>
+      </ion-list>
+    <ion-button color="dark" fill="clear" size="full" (click)="onClick()">Valider</ion-button>
+  </ion-card>
+</ion-content>

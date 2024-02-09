@@ -1,0 +1,10 @@
+ion-button[color="dark"]{
+    text-transform: initial;
+}
+ion-content {
+    --background: var(--ion-color-primary);
+}
+ion-card-title{
+    visibility: inherit;
+    text-align: center;
+}

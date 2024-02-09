@@ -1,0 +1,29 @@
+ion-img{
+    height: 30%;
+    width: 30%;
+}
+ion-content {
+  --background: var(--ion-color-primary);
+}
+.icon-container {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .note {
+    position: right;
+    top: -10px;
+    right: -20px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 5px 10px;
+    font-size: 12px;
+    display: none;
+  }
+  
+  .icon-container:hover .note {
+    display: block;
+  }
+/*<ion-button [routerLink]="['/mon-annonce', annonces.idAnnonce]" routerDirection="forward" color="success" fill="clear" size="full">Voir details...</ion-button>
+ */

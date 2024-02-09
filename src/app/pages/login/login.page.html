@@ -1,0 +1,114 @@
+<ion-content>
+  <div class="flex-center">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title color="primary">Carshop</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+          <form #form = "ngForm" (ngSubmit)="onSubmit()">
+            <ion-card>
+              <ng-container *ngIf="submissionType === 'login' ">
+                <ion-item>
+                  <ion-input  labelPlacement="floating" placeholder="hi@gmail.com" 
+                    #emailInput="ngModel" 
+                    ngModel 
+                    type="email" 
+                    name="email" 
+                    required>
+                    <div slot="label">Email</div>
+                  </ion-input>
+                </ion-item>
+                <ion-item>
+                  <ion-input labelPlacement="floating" 
+                    #passwordInput="ngModel" 
+                    ngModel
+                    type="password"
+                    name="password"
+                    required>
+                    <div slot="label">Mot de Passe</div>
+                  </ion-input>
+                </ion-item>
+              </ng-container>
+              <ng-container *ngIf="submissionType === 'join' ">
+                <ion-item>
+                  <ion-input labelPlacement="floating" 
+                    #nameInput="ngModel" 
+                    ngModel
+                    type="text"
+                    name="name"
+                    required>
+                    <div slot="label">Name</div>
+                  </ion-input>
+                </ion-item>
+                <ion-item>
+                  <ion-input labelPlacement="floating" 
+                    #lastNameInput="ngModel" 
+                    ngModel
+                    type="text"
+                    name="lastName"
+                    required>
+                    <div slot="label">Last Name</div>
+                  </ion-input>
+                </ion-item>
+                <ion-item>
+                  <ion-input  labelPlacement="floating" placeholder="hi@gmail.com" 
+                    #emailInput="ngModel" 
+                    ngModel 
+                    type="email" 
+                    name="email" 
+                    required>
+                    <div slot="label">Email</div>
+                  </ion-input>
+                </ion-item>
+                <ion-item>
+                  <ion-input  labelPlacement="floating" placeholder="hi@gmail.com" 
+                    #dateInput="ngModel" 
+                    ngModel 
+                    type="date" 
+                    name="date_naissance" 
+                    required>
+                    <div slot="label">Date de Naissance</div>
+                  </ion-input>
+                </ion-item>
+                <ion-item>
+                  <ion-input labelPlacement="floating" 
+                    #passwordInput="ngModel" 
+                    ngModel
+                    type="password"
+                    name="password"
+                    required>
+                    <div slot="label">Mot de Passe</div>
+                  </ion-input>
+                </ion-item>
+                <ion-item>
+                  <ion-input labelPlacement="floating" 
+                    #confirmedPasswordInput="ngModel" 
+                    ngModel
+                    type="password"
+                    name="confirmedPassword"
+                    required>
+                    <div slot="label">Confirmer Votre Mot de Passe</div>
+                  </ion-input>
+                </ion-item>
+              </ng-container>
+              <ion-button 
+                [disabled]="!form.valid"
+                type="submit"
+                color="sucess" 
+                size="full">
+                  {{ submissionType === 'join' ? 'S\'inscrire' : 'Login'}}
+              </ion-button>
+
+            </ion-card>
+          </form>
+          <div class="toggle-text">
+            {{ submissionType === 'login' ? 'Nouveau dans Carshop?' : 'A déjà un compte'}}
+            <ion-text (click)="toggleText()" color="primary">
+              {{ submissionType === 'login' ? 'Inscrivez-vous' : 'Logez-vous'}}
+            </ion-text>
+          </div>
+        </ion-card-content>
+    </ion-card>
+  </div>
+  
+</ion-content>

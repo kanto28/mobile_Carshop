@@ -1,0 +1,43 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button  [routerLink]="['/mini-annonce']">
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Mon Annonce</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <swiper-container #swiper (afterinit)="swiperReady()" (slidechange)="swiperSlideChanged($event)" [loop]="true" [pagination]="true" zoom="true">
+      
+      <swiper-slide *ngFor="let image of images">
+        <div class="swiper-zoom-container">
+          <img [src]="image">
+        </div>
+      </swiper-slide>
+    </swiper-container>
+  </ion-card>
+  <ion-card>
+    <ion-label>
+      <p>Date d'annonce : {{ annonce.date_annonce}}</p>
+      <p>Model : {{ vehicule.modele }}</p>
+      <p>Marque : {{ vehicule.marque }}</p>
+      <p>Carburant : essence</p>
+      <p>Categorie : {{ vehicule.categorie }}</p>
+      <p>Vitesse :  km/h</p>
+      <p>Kilometrage : {{ vehicule.kilometrage }} km</p>
+      <p>Fabrication : {{ vehicule.annee}}</p>
+      <p>Place : {{ vehicule.nombre_place }}</p>
+      <p>Transmission : {{ vehicule.transmission }}</p>
+      <p>Prix de vente : {{ annonce.prix }} MGA</p>
+      <p>Etat : Non Vendu / Vendu le </p>
+      <p>Description : {{ annonce.descriptions }}</p>
+      <p>Options: Climatisation , vitre électrique, Airbags , Entretien régulier, aucune réparation majeur</p>
+  
+    </ion-label>
+  </ion-card>
+</ion-content>
+ 

@@ -1,0 +1,44 @@
+<ion-content>
+  <div class="flex-center">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title color="primary">Location Voiture Inscription</ion-card-title>
+      </ion-card-header>
+      <form (ngSubmit)="submitSignupForm()">
+        <ion-card-content>
+          <ion-item>
+            <ion-input labelPlacement="floating"  type="text" formControlName="name">
+              <div slot="label">Nom</div>
+            </ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input labelPlacement="floating"  type="text" formControlName="last_name">
+            <div slot="label">Prenom</div>
+          </ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input labelPlacement="floating" placeholder="hi@gmail.com" type="email" formControlName="email">
+            <div slot="label">Email</div>
+          </ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input labelPlacement="floating"  type="date" formControlName="date_naissance">
+            <div slot="label">Date de naissance</div>
+          </ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input labelPlacement="floating"  type="password" formControlName="password">
+            <div slot="label">Mot de Passe</div>
+          </ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input labelPlacement="floating"  type="password" formControlName="password_confirmation">
+            <div slot="label">Reconfirmer votre Mot de Passe</div>
+          </ion-input>
+        </ion-item>
+        <ion-button color="dark" fill="clear" size="full">S'inscrire</ion-button>
+      </ion-card-content>
+    </form>
+    </ion-card>
+  </div>
+</ion-content>
