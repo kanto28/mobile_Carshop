@@ -32,6 +32,8 @@ export class MiniAnnoncePage implements OnInit {
 
   ngOnInit() {
     this.getAllAnnonce();
+    
+    
   }
 
   direction(idAnnonce : string){
