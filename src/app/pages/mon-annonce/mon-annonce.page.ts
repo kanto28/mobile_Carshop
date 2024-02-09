@@ -18,7 +18,7 @@ export class MonAnnoncePage implements OnInit {
 
   images = [
     './assets/andrana.jpg',
-    './assets/andrana1.jpeg',
+    './assets/andrana1.jpg',
     './assets/andrana2.jpg',
   ];
 
