@@ -64,7 +64,6 @@ export class MonAnnoncePage implements OnInit {
     this.swiper = this.swiperRef?.nativeElement.swiper;
   }
   ngOnInit() {
-    console.log(1," idAnnonce = ",this.route.snapshot.paramMap.get('idAnnonce'));
     this.getAnnonce();
   }
 
@@ -85,18 +84,18 @@ export class MonAnnoncePage implements OnInit {
           this.annonce.validations = jsonData.data.validations;
           this.annonce.etat = jsonData.data.etat;
 
-          this.vehicule.modele = jsonData.modele;
-          this.vehicule.marque = jsonData.marque;
-          this.vehicule.categorie = jsonData.categorie;
-          this.vehicule.types = jsonData.types;
-          this.vehicule.matriculation = jsonData.matriculation;
-          this.vehicule.couleur = jsonData.couleur;
-          this.vehicule.annee = jsonData.annee;
-          this.vehicule.consommation = jsonData.consommation;
-          this.vehicule.capacite_reservoir = jsonData.capacite_reservoir;
-          this.vehicule.nombre_place = jsonData.nombre_place;
-          this.vehicule.transmission = jsonData.transmission;
-          this.vehicule.kilometrage = jsonData.kilometrage;
+          this.vehicule.modele = jsonData.data.modele;
+          this.vehicule.marque = jsonData.data.marque;
+          this.vehicule.categorie = jsonData.data.categorie;
+          this.vehicule.types = jsonData.data.types;
+          this.vehicule.matriculation = jsonData.data.matriculation;
+          this.vehicule.couleur = jsonData.data.couleur;
+          this.vehicule.annee = jsonData.data.annee;
+          this.vehicule.consommation = jsonData.data.consommation;
+          this.vehicule.capacite_reservoir = jsonData.data.capacite_reservoir;
+          this.vehicule.nombre_place = jsonData.data.nombre_place;
+          this.vehicule.transmission = jsonData.data.transmission;
+          this.vehicule.kilometrage = jsonData.data.kilometrage;
         }, err => {
           console.log(err);
       });

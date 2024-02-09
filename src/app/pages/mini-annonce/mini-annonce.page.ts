@@ -12,6 +12,8 @@ import { Vehicule } from 'src/app/interfaces/vehicule';
 })
 export class MiniAnnoncePage implements OnInit {
 
+  donnees: any[] = [];
+  
   annonces = {
     id_annonce: 0,
     id_vehicule: 0,
@@ -29,7 +31,7 @@ export class MiniAnnoncePage implements OnInit {
     private navCtrl : NavController) {}
 
   ngOnInit() {
-    // this.getAllAnnonce();
+    this.getAllAnnonce();
   }
 
   direction(idAnnonce : string){
@@ -40,8 +42,8 @@ export class MiniAnnoncePage implements OnInit {
   async getAllAnnonce() {
     await this.api.getAllAnnonce()
       .subscribe(res => {
-        this.annonces = res;
-        console.log(this.annonces);
+        this.donnees = res.data;
+        console.log(this.donnees);
       }, err => {
         console.log(err);
     });
