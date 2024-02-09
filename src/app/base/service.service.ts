@@ -11,7 +11,7 @@ import { Vehicule } from '../interfaces/vehicule'
 })
 export class ServiceService {
 
-  private readonly apiUrl = 'http://carshopbackend-production-477a.up.railway.app/carshop/'
+  private readonly apiUrl = 'https://carshopbackend-production-477a.up.railway.app/carshop/'
   constructor(private http: HttpClient) {} 
 
   requestOptions = {
